@@ -6,22 +6,19 @@
   <title>Carta Cinematográfica</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="rapunzel">
+  <div class="scene">
+    <!-- Personagens -->
+    <img src="img/belafera.png" class="character active" id="belafera">
+    <img src="img/rapunzel.png" class="character" id="rapunzel">
+    <img src="img/aladdin.png" class="character" id="aladdin">
 
-  <!-- EFEITOS -->
-  <div id="effects"></div>
-
-  <!-- CASAL -->
-  <img id="casal" src="img/rapunzel.png" alt="Casal">
-
-  <!-- CARTA -->
-  <div class="carta">
-    <div id="textoCarta"></div>
+    <!-- Texto -->
+    <div class="card" id="cardText">
+      Eu demorei pra entender
+    </div>
   </div>
-
-  <!-- MÚSICA -->
-  <audio id="musica" loop></audio>
 
   <script src="node.js"></script>
 </body>
