@@ -110,7 +110,26 @@ body.bela #effects span {
   to { transform: translateX(110vw); }
 }
 
+.scene {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#personagem {
+  max-height: 90vh;
+  max-width: 90vw;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 @keyframes cair {
   from { transform: translateY(-10vh); }
   to { transform: translateY(110vh); }
+
 }
