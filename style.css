@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: Georgia, serif;
+  transition: background 1s ease;
+}
+
+/* CASAL */
+#casal {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 80vh;
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* CARTA */
+.carta {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  z-index: 10;
+}
+
+#textoCarta {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* CENÁRIOS */
+body.rapunzel {
+  background: radial-gradient(circle at bottom, #5b21b6, #1e003a);
+}
+
+body.aladdin {
+  background: linear-gradient(to top, #38bdf8, #e0f2fe);
+}
+
+body.bela {
+  background: radial-gradient(circle, #78350f, #2a0a05);
+}
+
+/* CARTA TEMÁTICA */
+body.rapunzel .carta {
+  background: #ede9fe;
+}
+
+body.aladdin .carta {
+  background: #ecfeff;
+}
+
+body.bela .carta {
+  background: #fff7ed;
+}
+
+/* EFEITOS BASE */
+#effects span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .8;
+}
+
+/* RAPUNZEL – LANTERNAS */
+body.rapunzel #effects span {
+  width: 10px;
+  height: 14px;
+  background: #c084fc;
+  box-shadow: 0 0 12px #c084fc;
+  animation: subir 10s linear infinite;
+}
+
+/* ALADDIN – BOLHAS SUAVES */
+body.aladdin #effects span {
+  width: 8px;
+  height: 8px;
+  background: rgba(125,211,252,.7);
+  animation: flutuar 12s linear infinite;
+}
+
+/* BELA – BOLHAS DOURADAS */
+body.bela #effects span {
+  width: 6px;
+  height: 6px;
+  background: gold;
+  animation: cair 9s linear infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes subir {
+  from { transform: translateY(110vh); }
+  to { transform: translateY(-10vh); }
+}
+
+@keyframes flutuar {
+  from { transform: translateX(-10vw); }
+  to { transform: translateX(110vw); }
+}
+
+@keyframes cair {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}

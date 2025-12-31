@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Surpresa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle, #1e003a, #020617);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .box {
+      background: rgba(255,255,255,.1);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 14px 26px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: .3s;
+      position: relative;
+    }
+
+    #sim {
+      background: #22c55e;
+      color: white;
+    }
+
+    #nao {
+      background: #ef4444;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>Quer ver sua surpresa?</h1>
+
+    <div class="botoes">
+      <button id="sim">Sim</button>
+      <button id="nao">Não</button>
+    </div>
+  </div>
+
+  <script>
+    const btnNao = document.getElementById("nao");
+
+    btnNao.addEventListener("mouseenter", () => {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+
+      btnNao.style.left = x + "px";
+      btnNao.style.top = y + "px";
+    });
+
+    document.getElementById("sim").addEventListener("click", () => {
+      window.location.href = "codex.html";
+    });
+  </script>
+
+</body>
+</html>
