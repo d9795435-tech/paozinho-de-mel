@@ -192,8 +192,10 @@ body.bela #effects span {
     min-height: 100vh;
     background-size: 100%;
     background-position: center 92%;
+   padding-bottom: 80px;
   }
 }   
+
 
 
 
