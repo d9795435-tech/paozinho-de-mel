@@ -11,23 +11,20 @@ body {
   transition: background 1s ease;
 }
 
-/* CASAL – FIXO E IMÓVEL */
-#casal {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  cursor: pointer;
-}
-
-#casal img {
-  max-height: 90vh;
+/* CASAL / PERSONAGEM */
+#casal,
+#personagem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 80vh;
   max-width: 90vw;
   width: auto;
   height: auto;
   object-fit: contain;
+  z-index: 5;
+  cursor: pointer;
 }
 
 /* CARTA */
@@ -75,7 +72,7 @@ body.bela .carta {
   background: #fff7ed;
 }
 
-/* EFEITOS BASE */
+/* EFEITOS */
 #effects span {
   position: absolute;
   border-radius: 50%;
@@ -99,12 +96,23 @@ body.aladdin #effects span {
   animation: flutuar 12s linear infinite;
 }
 
-/* BELA – BOLHAS DOURADAS */
+/* BELA – DOURADO */
 body.bela #effects span {
   width: 6px;
   height: 6px;
   background: gold;
   animation: cair 9s linear infinite;
+}
+
+/* CENA */
+.scene {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* ANIMAÇÕES */
@@ -123,15 +131,32 @@ body.bela #effects span {
   to { transform: translateY(110vh); }
 }
 
-/* AJUSTE EXTRA PARA CELULAR */
+/* ========================= */
+/* ===== SOMENTE CELULAR ==== */
+/* ========================= */
 @media (max-width: 768px) {
-  #casal img {
-    max-height: 80vh;
-    max-width: 85vw;
+
+  .scene {
+    align-items: flex-end;
+  }
+
+  #casal,
+  #personagem {
+    max-height: 55vh;
+    max-width: 90vw;
+    transform: none;
+    margin-bottom: 120px;
   }
 
   .carta {
-    right: 12px;
-    width: 280px;
+    position: fixed;
+    bottom: 20px;
+    top: auto;
+    right: 50%;
+    transform: translateX(50%);
+    width: calc(100% - 32px);
+    max-width: 360px;
+    z-index: 20;
   }
+
 }
