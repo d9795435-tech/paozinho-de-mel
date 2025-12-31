@@ -185,6 +185,12 @@ body.bela #effects span {
 
   #textoCarta {
     font-size: 16px;
+     @media (max-width: 768px) {
+  .hero {
+    background-position: center top;
+  }
+}
     line-height: 1.7;
   }
 }
+
