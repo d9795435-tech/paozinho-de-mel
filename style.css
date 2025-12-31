@@ -1,4 +1,3 @@
-
 /* =========================
    RESET
 ========================= */
@@ -12,7 +11,7 @@
    BODY
 ========================= */
 body {
-  position: relative;          /* IMPORTANTE p/ PC */
+  position: relative;
   height: 100vh;
   overflow: hidden;
   font-family: Georgia, serif;
@@ -36,7 +35,7 @@ body {
 }
 
 /* =========================
-   CASAL (IMAGEM PRINCIPAL)
+   IMAGEM PRINCIPAL (CASAL)
 ========================= */
 #casal {
   position: absolute;
@@ -47,7 +46,6 @@ body {
   z-index: 5;
   cursor: pointer;
   display: block;
-  visibility: visible;
   opacity: 1;
   transition: opacity .4s ease;
 }
@@ -65,7 +63,7 @@ body {
   border-radius: 14px;
   background: #fff;
   box-shadow: 0 20px 40px rgba(0,0,0,.25);
-  z-index: 20;                 /* GARANTE VISIBILIDADE NO PC */
+  z-index: 20;
   backdrop-filter: blur(4px);
 }
 
@@ -93,13 +91,12 @@ body.bela {
    CARTA TEMÁTICA
 ========================= */
 body.rapunzel .carta { background: #ede9fe; }
-body.aladdin .carta { background: #ecfeff; }
-body.bela .carta { background: #fff7ed; }
+body.aladdin .carta  { background: #ecfeff; }
+body.bela .carta     { background: #fff7ed; }
 
 /* =========================
    EFEITOS POR CENÁRIO
 ========================= */
-/* RAPUNZEL – LANTERNAS */
 body.rapunzel #effects span {
   width: 10px;
   height: 14px;
@@ -108,7 +105,6 @@ body.rapunzel #effects span {
   animation: subir 10s linear infinite;
 }
 
-/* ALADDIN – BOLHAS */
 body.aladdin #effects span {
   width: 8px;
   height: 8px;
@@ -116,7 +112,6 @@ body.aladdin #effects span {
   animation: flutuar 12s linear infinite;
 }
 
-/* BELA – PARTÍCULAS */
 body.bela #effects span {
   width: 6px;
   height: 6px;
@@ -143,27 +138,35 @@ body.bela #effects span {
 }
 
 /* =========================
-   📱 CELULAR
+   📱 MOBILE (AJUSTE REAL)
 ========================= */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
 
   #casal {
-    max-height: 60vh;
+    position: relative;
+    max-height: 45vh;          /* imagem BEM menor */
+    margin: 30px auto 20px auto;
   }
 
   .carta {
-    width: 92%;
-    right: 50%;
-    bottom: 16px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    right: auto;
     top: auto;
-    transform: translateX(50%);
-    padding: 16px;
-    border-radius: 12px;
+    transform: none;
   }
 
   #textoCarta {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5;
+    text-align: center;
   }
 }
 
@@ -173,62 +176,17 @@ body.bela #effects span {
 @media (min-width: 1024px) {
 
   #casal {
-    max-height: 75vh;     /* AJUSTE DA PRIMEIRA IMAGEM */
+    max-height: 75vh;
     bottom: -20px;
   }
 
   .carta {
     width: 360px;
     right: 40px;
-    z-index: 20;
   }
 
   #textoCarta {
     font-size: 16px;
-  }  line-height: 1.7;
-
-@media (max-width: 768px) {
-  .hero {
-    height: 55vh;              /* diminui bastante a altura */
-    background-size: 80%;      /* reduz bem a imagem */
-    background-repeat: no-repeat;
-    background-position: center bottom;
+    line-height: 1.7;
   }
 }
-
-/* ===== AJUSTE MOBILE DEFINITIVO ===== */
-@media (max-width: 768px) {
-
-  body.rapunzel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #casal {
-    width: 55%;
-    max-width: 280px;
-    height: auto;
-    margin: 40px auto 20px auto;
-    display: block;
-  }
-
-  .carta {
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto 40px auto;
-  }
-
-  #textoCarta {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
-  }
-}
-
-
-
-
-
-
-
