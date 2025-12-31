@@ -196,6 +196,35 @@ body.bela #effects span {
   }
 }
 
+/* ===== AJUSTE MOBILE DEFINITIVO ===== */
+@media (max-width: 768px) {
+
+  body.rapunzel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #casal {
+    width: 55%;
+    max-width: 280px;
+    height: auto;
+    margin: 40px auto 20px auto;
+    display: block;
+  }
+
+  .carta {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+  }
+
+  #textoCarta {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
 
 
 
