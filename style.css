@@ -189,11 +189,13 @@ body.bela #effects span {
 
 @media (max-width: 768px) {
   .hero {
-    height: 75vh;
-    background-size: cover;
+    height: 55vh;              /* diminui bastante a altura */
+    background-size: 80%;      /* reduz bem a imagem */
+    background-repeat: no-repeat;
     background-position: center bottom;
   }
-}   
+}
+
 
 
 
