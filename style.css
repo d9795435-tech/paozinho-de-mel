@@ -11,15 +11,23 @@ body {
   transition: background 1s ease;
 }
 
-/* CASAL */
+/* CASAL – FIXO E IMÓVEL */
 #casal {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-height: 80vh;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
   cursor: pointer;
+}
+
+#casal img {
+  max-height: 90vh;
+  max-width: 90vw;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* CARTA */
@@ -83,7 +91,7 @@ body.rapunzel #effects span {
   animation: subir 10s linear infinite;
 }
 
-/* ALADDIN – BOLHAS SUAVES */
+/* ALADDIN – BOLHAS */
 body.aladdin #effects span {
   width: 8px;
   height: 8px;
@@ -110,26 +118,20 @@ body.bela #effects span {
   to { transform: translateX(110vw); }
 }
 
-.scene {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 10;
-}
-
-#personagem {
-  max-height: 90vh;
-  max-width: 90vw;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
 @keyframes cair {
   from { transform: translateY(-10vh); }
   to { transform: translateY(110vh); }
+}
 
+/* AJUSTE EXTRA PARA CELULAR */
+@media (max-width: 768px) {
+  #casal img {
+    max-height: 80vh;
+    max-width: 85vw;
+  }
+
+  .carta {
+    right: 12px;
+    width: 280px;
+  }
 }
